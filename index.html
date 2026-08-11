@@ -3,8 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DiskX — the disk visualizer macOS never shipped</title>
-<meta name="description" content="A keyboard-first macOS disk space visualizer that sorts by what you should delete first, not just by size. WizTree-class scanning, fear-free deletion, honest byte accounting.">
+<title>DiskX — macOS disk space analyzer & disk explorer (free, open source)</title>
+<meta name="description" content="DiskX is a free, open-source disk space analyzer for macOS. See what's taking up space on your Mac with a treemap and a keyboard-first file explorer that sorts by what's safe to delete first. A modern Disk Inventory X, DaisyDisk, GrandPerspective and OmniDiskSweeper alternative — the WizTree for Mac.">
+<meta name="keywords" content="mac disk space analyzer, disk usage analyzer macOS, disk explorer mac, treemap disk visualizer, find large files mac, free up disk space macbook, what is System Data on Mac, Disk Inventory X alternative, DaisyDisk alternative, GrandPerspective alternative, OmniDiskSweeper alternative, WizTree for Mac, ncdu GUI, open source mac disk cleaner, storage analyzer">
+<link rel="canonical" href="https://avantigroupai.github.io/diskx-web/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DiskX — macOS disk space analyzer & disk explorer">
+<meta property="og:description" content="Free, open-source disk space analyzer for macOS. A treemap plus a keyboard-first explorer that sorts by what's safe to delete first.">
+<meta property="og:url" content="https://avantigroupai.github.io/diskx-web/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "DiskX",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "macOS 14 or later",
+  "description": "Free, open-source macOS disk space analyzer and disk explorer with a treemap visualization and keyboard-first, reclaim-first sorting.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "downloadUrl": "https://github.com/avantigroupai/DiskX/releases/latest",
+  "softwareVersion": "1.0.0"
+}
+</script>
 <style>
   :root {
     --bg: #0c0c0f;
@@ -235,6 +255,21 @@
   .codeblock .c { color: var(--ink-4); }
   .codeblock .p { color: var(--accent); }
 
+  /* comparison table */
+  .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--pane); }
+  table.cmp { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 860px; }
+  table.cmp th, table.cmp td { text-align: left; padding: 16px 20px; vertical-align: top; border-bottom: 1px solid var(--line); }
+  table.cmp th { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); font-weight: 650; background: var(--pane-2); }
+  table.cmp td { color: var(--ink-2); }
+  table.cmp td:first-child { color: var(--ink); font-weight: 560; white-space: nowrap; }
+  table.cmp tr:last-child td { border-bottom: none; }
+  table.cmp tr.me td { background: var(--accent-soft); color: var(--ink); }
+  .seo-note { margin-top: 26px; font-size: 13px; color: var(--ink-4); line-height: 1.8; }
+  .install { max-width: 640px; margin: 44px auto 0; text-align: left; }
+  .install h3 { font-size: 17px; font-weight: 640; margin-bottom: 10px; }
+  .install p { color: var(--ink-2); font-size: 14.5px; }
+  .mono { font-family: var(--mono); font-size: 13px; }
+
   /* footer */
   footer { border-top: 1px solid var(--line); padding: 54px 0 64px; }
   .foot { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; }
@@ -260,9 +295,9 @@
     <div class="nav-links">
       <a href="#features">Features</a>
       <a href="#speed">Speed</a>
-      <a href="#deletion">Deletion</a>
+      <a href="#alternatives">Alternatives</a>
       <a href="#built">How it's built</a>
-      <a class="btn btn-primary" href="#download">Get DiskX</a>
+      <a class="btn btn-primary" href="https://github.com/avantigroupai/DiskX/releases/latest">Download</a>
     </div>
   </div>
 </nav>
@@ -274,7 +309,10 @@
     <h1>The disk visualizer macOS <span class="muted">never shipped.</span></h1>
     <p class="lede">Every analyzer sorts by raw size — which parks <em>/System</em> and your photo library at the top, while the 40&nbsp;GB of caches you could delete right now sits three levels deep. DiskX sorts by the only question that matters: <strong>what should I delete first?</strong></p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="#download">Get DiskX</a>
+      <a class="btn btn-primary" href="https://github.com/avantigroupai/DiskX/releases/download/1.0.0/DiskX-1.0.0.dmg">
+        <svg class="icon" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+        Download for macOS
+      </a>
       <a class="btn btn-ghost" href="#built">
         <svg class="icon" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M9 18l6-6-6-6"/></svg>
         How it was built
@@ -497,6 +535,64 @@
   </div>
 </section>
 
+<!-- Alternatives / comparison -->
+<section id="alternatives">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Comparison</div>
+      <h2>How DiskX compares to other Mac disk space analyzers.</h2>
+      <p>If you're weighing DaisyDisk, CleanMyMac, Disk Inventory X, GrandPerspective or OmniDiskSweeper — here's an honest summary, including where the others are genuinely better.</p>
+    </div>
+    <div class="tablewrap">
+      <table class="cmp">
+        <thead>
+          <tr><th>Tool</th><th>Platform</th><th>Price</th><th>Approach</th><th>How DiskX differs</th></tr>
+        </thead>
+        <tbody>
+          <tr class="me">
+            <td><strong>DiskX</strong></td><td>macOS 14+</td><td>Free, open source</td>
+            <td>Treemap + keyboard list, reclaim-first sorting</td>
+            <td>Sorts by what's safe to delete rather than raw size; 100 % keyboard; Trash-only with undo</td>
+          </tr>
+          <tr>
+            <td>DaisyDisk</td><td>macOS</td><td>~$10 one-time</td><td>Sunburst chart, drag-to-collector deletion</td>
+            <td>DaisyDisk's sunburst is gorgeous and genuinely fast; DiskX trades it for an area-accurate treemap, keyboard-only operation and explicit “safe to delete” reasoning</td>
+          </tr>
+          <tr>
+            <td>CleanMyMac</td><td>macOS</td><td>Subscription</td><td>Automated one-click cleanup suites</td>
+            <td>CleanMyMac automates far more (uninstaller, malware scan, maintenance); DiskX only analyzes and deletes what you pick — no subscription, no telemetry, no background agents</td>
+          </tr>
+          <tr>
+            <td>Disk Inventory X</td><td>macOS</td><td>Free</td><td>The classic treemap that defined this category</td>
+            <td>Effectively unmaintained and slow on modern multi-terabyte disks; DiskX is a native, parallel, Apple Silicon rewrite of the same idea</td>
+          </tr>
+          <tr>
+            <td>GrandPerspective</td><td>macOS</td><td>Free (GPL)</td><td>Long-lived, well-maintained treemap</td>
+            <td>A great free treemap; DiskX adds labeled rows, reclaim scoring, keyboard navigation and safer deletion</td>
+          </tr>
+          <tr>
+            <td>OmniDiskSweeper</td><td>macOS</td><td>Free</td><td>Finder-style size-sorted column browser</td>
+            <td>Very fast and very simple, but it deletes <em>permanently</em> and shows no visualization; DiskX always routes through the Trash and is undoable</td>
+          </tr>
+          <tr>
+            <td>WizTree · TreeSize · WinDirStat · SpaceSniffer</td><td>Windows</td><td>Free / paid</td><td>The Windows gold standard for fast scans</td>
+            <td>None of them exist on macOS — DiskX is the answer to “I wish there were a WizTree for Mac”</td>
+          </tr>
+          <tr>
+            <td>ncdu · dust · gdu</td><td>Terminal</td><td>Free</td><td>Blazing keyboard-driven TUIs</td>
+            <td>DiskX keeps ncdu's keyboard efficiency and its delete-with-confirm flow, in a native GUI with a treemap</td>
+          </tr>
+          <tr>
+            <td>macOS Storage Settings</td><td>Built in</td><td>Free</td><td>High-level category bars</td>
+            <td>The built-in panel famously can't explain “System Data”; the DiskX Truth Bar reconciles scanned files, system, purgeable and free space so the numbers add up</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="seo-note">People find DiskX searching for: mac disk space analyzer · disk usage analyzer macOS · disk explorer for Mac · treemap disk visualizer · find large files on Mac · free up storage on a MacBook · what is System Data on Mac · delete Xcode DerivedData · clean node_modules · Disk Inventory X alternative · DaisyDisk alternative · WizTree for Mac · ncdu GUI · open source Mac disk cleaner.</p>
+  </div>
+</section>
+
 <!-- How it's built -->
 <section id="built">
   <div class="wrap">
@@ -532,17 +628,28 @@
 <section id="download">
   <div class="wrap cta-band">
     <h2>Get your disk space back.</h2>
-    <p>DiskX is a native macOS app written in Swift. Build it from source today — a Mac App Store release is on the way.</p>
+    <p>Free and open source. Requires macOS 14 Sonoma or later — universal for Apple Silicon and Intel.</p>
     <div class="cta-actions">
-      <a class="btn btn-primary" href="https://github.com/avantigroupai/DiskX">View on GitHub</a>
-      <a class="btn btn-ghost" href="#top">Back to top</a>
+      <a class="btn btn-primary" href="https://github.com/avantigroupai/DiskX/releases/download/1.0.0/DiskX-1.0.0.dmg">
+        <svg class="icon" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+        Download DiskX 1.0.0 (.dmg)
+      </a>
+      <a class="btn btn-ghost" href="https://github.com/avantigroupai/DiskX">View source on GitHub</a>
     </div>
-    <div class="codeblock">
+
+    <div class="install">
+      <h3>Opening it the first time</h3>
+      <p>This build is ad-hoc signed but <strong>not yet notarized</strong>, so macOS quarantines it on first launch. Open it once with <strong>right-click → Open → Open</strong>, or clear the flag:</p>
+      <div class="codeblock" style="margin-top:16px">xattr -dr com.apple.quarantine /Applications/DiskX.app</div>
+      <p style="margin-top:16px">To scan <span class="mono">~/Library</span> and system paths, grant <strong>Full Disk Access</strong> in System Settings → Privacy &amp; Security. Without it DiskX shows an honest “unreadable folders” chip instead of silently undercounting.</p>
+      <h3 style="margin-top:28px">Or build from source</h3>
+      <div class="codeblock" style="margin-top:16px">
 <span class="c"># Requires macOS 14+ and a Swift 6 toolchain</span>
-git clone <span class="p">git@github.com:avantigroupai/DiskX.git</span>
+git clone <span class="p">https://github.com/avantigroupai/DiskX.git</span>
 cd DiskX
 swift build <span class="c">&amp;&amp;</span> Scripts/package_app.sh
 open DiskX.app
+      </div>
     </div>
   </div>
 </section>
