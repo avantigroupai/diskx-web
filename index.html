@@ -41,9 +41,9 @@
       "description": "Free, open-source macOS disk space analyzer and disk explorer. Combines a squarified treemap with a keyboard-first file browser that sorts by what is safe to delete first rather than by raw size. All analysis is on-device; no telemetry and no network calls.",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "downloadUrl": "https://github.com/avantigroupai/DiskX/releases/latest",
-      "installUrl": "https://github.com/avantigroupai/DiskX/releases/download/1.0.3/DiskX-1.0.3.dmg",
-      "softwareVersion": "1.0.3",
-      "datePublished": "2026-08-11",
+      "installUrl": "https://github.com/avantigroupai/DiskX/releases/download/1.0.8/DiskX-1.0.8.dmg",
+      "softwareVersion": "1.0.8",
+      "datePublished": "2026-11-12",
       "isAccessibleForFree": true,
       "license": "https://github.com/avantigroupai/DiskX",
       "codeRepository": "https://github.com/avantigroupai/DiskX",
@@ -56,6 +56,7 @@
         "Truth Bar reconciles scanned, system, purgeable and free space and explains System Data",
         "Squarified treemap visualization synchronized with the file list",
         "100% keyboard operation including marking across folders and Quick Look",
+        "Finder-style multi-file selection and a visible batch Move to Trash action",
         "Trash-only deletion with full batch undo and risk-proportional confirmation",
         "Scans about 29,000 files per second, roughly 2.4x faster than du"
       ],
@@ -94,7 +95,7 @@
         {
           "@type": "Question",
           "name": "Is it safe to delete what DiskX suggests?",
-          "acceptedAnswer": { "@type": "Answer", "text": "DiskX never deletes anything on its own. Its ranking is a deterministic, inspectable score, not machine learning, and every row explains why it is ranked where it is. Deletions always move to the Trash rather than being permanent, the whole batch can be undone with Command-Z, and protected system files cannot be selected for deletion at all." }
+          "acceptedAnswer": { "@type": "Answer", "text": "DiskX never deletes anything on its own. Its ranking is a deterministic, inspectable score, not machine learning, and every row explains why it is ranked where it is. Deletions always move to the Trash rather than being permanent, the whole batch can be undone with Command-Z, and protected system files are excluded from deletion." }
         },
         {
           "@type": "Question",
@@ -410,7 +411,7 @@
     <h1>The disk visualizer macOS <span class="muted">never shipped.</span></h1>
     <p class="lede">Every analyzer sorts by raw size — which parks <em>/System</em> and your photo library at the top, while the 40&nbsp;GB of caches you could delete right now sits three levels deep. DiskX sorts by the only question that matters: <strong>what should I delete first?</strong></p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="https://github.com/avantigroupai/DiskX/releases/download/1.0.3/DiskX-1.0.3.dmg">
+      <a class="btn btn-primary" href="https://github.com/avantigroupai/DiskX/releases/download/1.0.8/DiskX-1.0.8.dmg">
         <svg class="icon" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
         Download for macOS
       </a>
@@ -574,12 +575,12 @@
       <div class="feat">
         <div class="ib"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M8 14h8"/></svg></div>
         <h3>100% keyboard</h3>
-        <p>Navigate, mark across folders, preview, sort and delete without touching the mouse. <kbd>X</kbd> to mark, <kbd>Space</kbd> to Quick Look, <kbd>1–5</kbd> to re-sort, <kbd>?</kbd> for the map.</p>
+        <p>Navigate, mark across folders, preview, sort and delete without touching the mouse. <kbd>X</kbd> to mark, <kbd>Space</kbd> to Quick Look, <kbd>1–6</kbd> to re-sort, <kbd>?</kbd> for the shortcut map.</p>
       </div>
       <div class="feat">
         <div class="ib"><svg class="icon" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14M10 11v5M14 11v5"/></svg></div>
         <h3>Fear-free deletion</h3>
-        <p>Select, hit Delete, confirm with a keystroke. Everything goes to the Trash — never a permanent delete — and <kbd>⌘Z</kbd> restores the whole batch. Protected system files can't even be selected.</p>
+        <p>Select multiple files with Command-click, Shift-click, Shift-arrow or <kbd>⌘A</kbd>, then use the visible Trash button or <kbd>⌘⌫</kbd>. Confirm the batch before it moves to the Trash; <kbd>⌘Z</kbd> restores it. Protected system files are excluded.</p>
       </div>
       <div class="feat">
         <div class="ib"><svg class="icon" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
@@ -756,7 +757,7 @@
       </details>
       <details>
         <summary>Is it safe to delete what DiskX suggests?</summary>
-        <p>DiskX never deletes anything on its own. The ranking is a deterministic, inspectable score — not machine learning — and every row explains why it ranks where it does. Deletions always go to the Trash rather than being permanent, the entire batch is undoable with <kbd>⌘Z</kbd>, and protected system files can't be selected for deletion at all.</p>
+        <p>DiskX never deletes anything on its own. The ranking is a deterministic, inspectable score — not machine learning — and every row explains why it ranks where it does. Deletions always go to the Trash rather than being permanent, the entire batch is undoable with <kbd>⌘Z</kbd>, and protected system files are excluded from deletion.</p>
       </details>
       <details>
         <summary>Does DiskX send my data anywhere?</summary>
@@ -776,16 +777,16 @@
     <h2>Get your disk space back.</h2>
     <p>Free and open source. Requires macOS 14 Sonoma or later — universal for Apple Silicon and Intel.</p>
     <div class="cta-actions">
-      <a class="btn btn-primary" href="https://github.com/avantigroupai/DiskX/releases/download/1.0.3/DiskX-1.0.3.dmg">
+      <a class="btn btn-primary" href="https://github.com/avantigroupai/DiskX/releases/download/1.0.8/DiskX-1.0.8.dmg">
         <svg class="icon" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
-        Download DiskX 1.0.3 (.dmg)
+        Download DiskX 1.0.8 (.dmg)
       </a>
       <a class="btn btn-ghost" href="https://github.com/avantigroupai/DiskX">View source on GitHub</a>
     </div>
 
     <div class="install">
       <h3>Opening it the first time</h3>
-      <p><strong>1.0.3 is the notarized build of the 1.0.2 security release</strong> — which fixes a reproducible crash that let any scanned folder abort the app, and hardens the deletion path. Drag it to Applications and open it: no right-click → Open, no <span class="mono">xattr</span>, no Privacy &amp; Security detour. It is Developer ID signed, notarized by Apple and stapled — both the DMG and the app inside it, so first launch works offline too.</p>
+      <p><strong>DiskX 1.0.8 adds reliable multi-file selection and a visible batch Trash button.</strong> Drag it to Applications and open it: no right-click → Open, no <span class="mono">xattr</span>, no Privacy &amp; Security detour. It is Developer ID signed, notarized by Apple and stapled — both the DMG and the app inside it, so first launch works offline too.</p>
       <p style="margin-top:16px">To scan <span class="mono">~/Library</span> and system paths, grant <strong>Full Disk Access</strong> in System Settings → Privacy &amp; Security. Without it DiskX shows an honest “unreadable folders” chip instead of silently undercounting.</p>
       <h3 style="margin-top:28px">Or build from source</h3>
       <div class="codeblock" style="margin-top:16px">
